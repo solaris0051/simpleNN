@@ -1,0 +1,2 @@
+- name: Black Check for Jupyter notebooks
+  uses: marius-mather/black-check@jupyter
