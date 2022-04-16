@@ -3,7 +3,9 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>in_1n_mid_12n_x4_out_1n</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script>
+<title>in_1n_mid_12n_x4_out_1n</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script>
 (function() {
   function addWidgetsRenderer() {
     var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
