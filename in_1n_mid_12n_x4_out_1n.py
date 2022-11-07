@@ -66,12 +66,12 @@ Original file is located at
 ---
 
 *  ニューラルネットワーク(NN)による教師付学習(SVM)  
-  *  ①.  前方伝搬(入力レイヤから出力レイヤへ向かって訓練データを伝搬)  
-  *  ②.  誤差修正(出力レイヤで誤差を計測)  
-    *  ②-1.  誤差の算出 ⇒ 出力レイヤに、損失関数として二乗和誤差(SSE)を適用して算出  
+  *  ①.  前方伝搬(入力層から出力層へ向かって訓練データを伝搬)  
+  *  ②.  誤差修正(出力層で誤差を計測)  
+    *  ②-1.  誤差の算出 ⇒ 出力層に、損失関数として二乗和誤差(SSE)を適用して算出  
     *  ②-2.  勾配降下法 ⇒ 損失関数の勾配(接線の傾き)を減らす方向へ重みを調整し、損失関数を最小化させる手法  
       (勾配の求め方 ⇒ 損失関数を偏微分で算出)  
-    *  ②-3.  誤差逆伝搬 ⇒ 出力レイヤから入力レイヤへニューラルネットワークを遡って誤差を伝搬  
+    *  ②-3.  誤差逆伝搬 ⇒ 出力層から入力層へニューラルネットワークを遡って誤差を伝搬  
 *  バッチサイズ: 1  
     *  バッチサイズが1の場合は、オンライン学習となる(リアルタイム計算のイメージ) 
       *  バッチ: 計算効率を向上させるため、エポックを分割実施する手法  
@@ -113,8 +113,9 @@ $$ f(x) = x $$
 
   *  それぞれの層には複数のニューロンが含まれることから、ベクター($\vec{u_j}$, $\vec{x_j}$, $\vec{b_j}$)と行列($W$)からなる表現となる。  
   *  換言すれば、単一ニューロンの数学モデルを層に適用した表現ともいえる。  
-$$  \begin{aligned} \\
-\vec{u_j} & = \vec{x_j} W + \vec{b_j} \\
+  
+$$ \begin{aligned}
+  \vec{u_j} & = \vec{x_j} W + \vec{b_j} \\
     & = (x_1, x_2, \cdots, x_m)
    \left(
     \begin{array}{cccc}
@@ -124,7 +125,7 @@ $$  \begin{aligned} \\
       w_{m1} & w_{m2} & \ldots & w_{mn} \\
     \end{array}
   \right) 
- + (b_1, b_2, \cdots, b_n) \\
+ +  (b_1, b_2, \cdots, b_n) \\
   & = (\sum\limits_{k=1}^m x_kw_{k1}+b_1, \sum\limits_{k=1}^m x_kw_{k2}+b_2, \ldots, \sum\limits_{k=1}^m x_kw_{kn}+b_n)
   \end{aligned}
   $$  
@@ -149,6 +150,20 @@ $E$ : 誤差総和
 $y_k$ : 出力層の$k$番目の出力値  
 $t_k$ : $k$番目の正解値  
 
+---
+
+*  勾配降下法  
+
+---
+
+* 重みの勾配降下の求め方  
+
+$$ w \leftarrow w-\eta\frac{\partial E}{\partial w} $$  
+
+*  バイアスの勾配降下の求め方  
+$$ b \leftarrow b-\eta\frac{\partial E}{\partial b} $$  
+
+*  ここでηは学習係数である。簡単なイメージで表現すると"学習の粒度(歩幅)"となる。
 ---
 
 *  出力層の各勾配  
@@ -351,8 +366,8 @@ n_in = 1   # the number of neurons at the input layer
 n_mid = 12 # the number of neurons at the hidden layers
 n_out = 1  # the number of neurons at the output layer
 
-wb_width = 0.667   # initial width of weight and bias
-eta = 0.164        # initial learning coefficient
+wb_width = 0.666   # initial width of weight and bias
+eta = 0.166        # initial learning coefficient
 epoch = 8001       # online batch, meaning its size is one.
 interval = 400     # initial monitoring interval
 
