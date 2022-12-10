@@ -78,8 +78,8 @@ Original file is located at
       *  バッチ: 計算効率を向上させるため、エポックを分割実施する手法  
         *  エポック:  機械計算による一連のデータ演算一式  
 
-*  Epoch数: 8,001  
-    *  表示インターバル: 400学習毎  
+*  Epoch数: 10,001  
+    *  表示インターバル: 500学習毎  
 *  入力データ数
   *  50個 ( $x$ = -1 ～ +1, tick = 0.04)
     *  簡単化のため、特別に訓練データは準備せず、各$x$に対し$y$をランダムに生成することで訓練データの代替としている。
@@ -146,7 +146,6 @@ $$ \begin{aligned}
 
 *  出力層で、誤差の算出に用いる関数  
 *  出力層の全ニューロンで、出力値と正解値の差を二乗し、それらを総和する関数  
-  *  $k$番目の誤差($y_k-t_k$)を$\delta_{k}$とおく。 
 $$ E = \frac{1}{2} \sum_{k}(y_k-t_k)^2 $$
 $E$ : 誤差総和  
 $y_k$ : 出力層の$k$番目の出力値  
@@ -369,8 +368,8 @@ n_in = 1   # the number of neurons at the input layer
 n_mid = 20 # the number of neurons at the hidden layers
 n_out = 1  # the number of neurons at the output layer
 
-wb_width = 0.77875  # initial width of weight and bias
-eta = 0.16655      # initial learning coefficient
+wb_width = 0.77899  # initial width of weight and bias
+eta = 0.16599      # initial learning coefficient
 epoch = 10001       # online batch, meaning its size is one.
 interval = 400     # initial monitoring interval
 
@@ -424,7 +423,7 @@ output_layer = OutputLayer(n_mid, n_out)
 # -- start learning --
 for i in range(epoch):
 
-    # shffle the indecies of arrays of input and their corresponding correct data to make learning order randamized
+    # shuffle the indecies of arrays of input and their corresponding correct data to make learning order randamized
     index_random = np.arange(n_data)
     np.random.shuffle(index_random)
 
