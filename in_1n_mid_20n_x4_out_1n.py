@@ -478,4 +478,3 @@ for i in range(epoch):
 
         # print epoch number and error(MSE)
         print("Epoch:" + str(i) + "/" + str(epoch),'     ',"Error(MSE):" + str(total_error))
-
