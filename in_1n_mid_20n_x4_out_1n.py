@@ -172,7 +172,7 @@ $$ b = b-\eta\frac{\partial E}{\partial b} $$
 
 ---
 
-*  $k$番目の誤差($y_k-t_k$)を$\delta_{k}$とおく。  
+*  隠れ層最終層、$k$番目ニューロンと正解の誤差($y_k-t_k$)を$\delta_{k}$とおく。  
 $$ \delta_{k} = y_k-t_k $$
 *  入力の勾配  
 $$ \frac{\partial E}{\partial y_j} =  \sum_{r=1}^n \delta_r w_{jr} $$
@@ -187,6 +187,7 @@ $$ \frac{\partial E}{\partial b_k} = \delta_{k} $$
 
 ---
 
+*  $\delta_{j}$は以下の通り与えられる。
 $$ \delta_{j} = \frac{\partial E}{\partial y_j}(1-y_j)y_j $$  
 *  入力の勾配  
 $$ \delta_{j} = \frac{\partial y_j}{\partial u_j}(1-y_j)y_j $$
