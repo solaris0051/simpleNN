@@ -371,7 +371,7 @@ n_out = 1  # the number of neurons at the output layer
 wb_width = 0.77899  # initial width of weight and bias
 eta = 0.16599      # initial learning coefficient
 epoch = 10001       # online batch, meaning its size is one.
-interval = 400     # initial monitoring interval
+interval = 500     # initial monitoring interval
 
 # -- super-class --
 class BaseLayer:
