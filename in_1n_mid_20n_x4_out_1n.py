@@ -369,7 +369,7 @@ n_mid = 20 # the number of neurons at the hidden layers
 n_out = 1  # the number of neurons at the output layer
 
 wb_width = 0.66612504   # initial width of weight and bias
-eta = 0.16666660        # learning rate
+eta = 0.16666670        # learning rate
 epoch = 20001          # online batch, meaning its size is one.
 interval = 1000        # initial monitoring interval
 
